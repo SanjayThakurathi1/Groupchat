@@ -1,16 +1,30 @@
-# groupchat
+# Groupchat
 
 A new Flutter project.
 
-## Getting Started
+## Use of firebase Authincation(Email Authincation)
+## Use of firebase firestore
+## Detect internet Connection
+## Use of StreamBuilder Widget
+# #Use of  Animation
 
-This project is a starting point for a Flutter application.
+# Package used are
 
-A few resources to get you started if this is your first Flutter project:
+animated_text_kit: ^2.2.0
+  firebase_core: ^0.4.5
+  firebase_auth: ^0.16.1
+  cloud_firestore: ^0.13.7
+  modal_progress_hud: ^0.1.3
+  font_awesome_flutter: ^8.8.1
+  form_field_validator: ^1.0.1
+  connectivity: ^0.4.9
+ 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ # Some Screenshot of this App
+ 
+ <img src="/App%20Screenhot/1.jpg" height=650 width =330>
+ <img src="/App%20Screenhot/2.jpg" height=650 width =330><img src="/App%20Screenhot/3.jpg" height=650 width =330><img src="/App%20Screenhot/4.jpg" height=650 width =330>
+ <img src="/App%20Screenhot/5.jpg" height=650 width =330> <img src="/App%20Screenhot/6.jpg" height=650 width =330><img src="/App%20Screenhot/7.jpg" height=650 width =330>
+ 
+ 
