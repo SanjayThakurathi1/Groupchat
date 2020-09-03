@@ -186,8 +186,7 @@ class Showmsg extends StatelessWidget {
             isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            sender
-            ,
+            sender,
             textAlign: TextAlign.end,
           ),
           Material(

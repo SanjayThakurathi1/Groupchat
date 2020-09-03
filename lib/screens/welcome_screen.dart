@@ -128,7 +128,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               UserAccountsDrawerHeader(
                 accountName: Text("Sanjay Thakurathi"),
                 accountEmail: Text("Thakurathisanjay@gmail.com"),
-                currentAccountPicture: Image.asset("images/profil.jpg"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage("images/profil.jpg"),
+                ),
                 otherAccountsPictures: <Widget>[
                   CircleAvatar(
                       child: Text(
