@@ -29,6 +29,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.amber,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+        ),
+      ),
       backgroundColor: Colors.white,
       body: ModalProgressHUD(
         inAsyncCall: showindicator,
@@ -61,8 +71,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       email = value;
                     },
                     decoration: kTextfieldDecoration.copyWith(
-                      hintText: "Enter your Email",
-                    )),
+                        hintText: "Enter your Email",
+                        prefixIcon: Icon(Icons.email))),
               ),
               SizedBox(
                 height: 8.0,
@@ -92,7 +102,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     "Register",
                     style: TextStyle(color: Colors.white),
                   ),
-                  color: Colors.lightBlue,
+                  color: Colors.amber,
                   onpressed: () async {
                     try {
                       setState(() {
@@ -104,6 +114,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       if (result != null) {
                         Navigator.pushNamed(context, ChatScreen.id);
                       }
+
                       setState(() {
                         showindicator = false;
                       });

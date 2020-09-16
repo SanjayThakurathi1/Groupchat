@@ -4,6 +4,7 @@ import 'package:groupchat/constants.dart';
 import 'package:groupchat/screens/buttons.dart';
 
 import 'package:groupchat/screens/chat_screen.dart';
+import 'package:groupchat/screens/welcome_screen.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -27,6 +28,16 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.amber,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+        ),
+      ),
       backgroundColor: Colors.white,
       body: ModalProgressHUD(
         inAsyncCall: showspinner,
@@ -52,7 +63,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 autovalidate: true,
                 key: _globalKey,
                 child: TextFormField(
-                    
                     validator: (value) =>
                         value.isEmpty ? "Enter Email address" : null,
                     keyboardType: TextInputType.emailAddress,
@@ -61,6 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       email = value;
                     },
                     decoration: kTextfieldDecoration.copyWith(
+                      prefixIcon: Icon(Icons.email),
                       hintText: 'Enter your Email',
                     )),
               ),
@@ -91,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 24.0,
               ),
               Buttons(
-                  color: Colors.lightBlueAccent,
+                  color: Colors.amber,
                   text: Text("Login"),
                   onpressed: () async {
                     try {
@@ -107,7 +118,25 @@ class _LoginScreenState extends State<LoginScreen> {
                         showspinner = false;
                       });
                     } catch (e) {
-                      print(e.toString());
+                      showDialog(
+                        barrierDismissible: false,
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: Text(
+                            "Email or password  wrong",
+                            style: TextStyle(
+                                color: Colors.red, fontWeight: FontWeight.bold),
+                          ),
+                          content: Text("please try again"),
+                          actions: [
+                            FlatButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text("Continue")),
+                          ],
+                        ),
+                      );
                     }
                   })
             ],

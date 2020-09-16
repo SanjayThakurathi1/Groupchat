@@ -146,7 +146,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             ? loggedin.phoneNumber
                             : loggedin.email
   */
-                        "sender": loggedin.email,
+                        "sender": loggedin.email ?? "Unknown User",
                       });
                     },
                     child: Text(
